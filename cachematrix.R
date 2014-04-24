@@ -1,10 +1,9 @@
-# Below are the two funcitons. Function "makeCacheMatrix" will
-## create a matrix. cacheSolve will catch the inverse of matrix
-#===============================================================
-# Below "makeCacheMatrix" function below will creat a special 
-##matrix object that will catch the inverse of the matrix
-#===============================================================
-# Begining of "makeCacheMatrix" function
+# Find the two funcitons. "makeCacheMatrix" && "cacheSolve" 
+#========================================
+    # "makeCacheMatrix" function
+#========================================
+#This function creats a special matrix object to cache inverse of matrix
+
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL # initiating empty inverse matrix
     set <- function(y){
@@ -20,14 +19,13 @@ makeCacheMatrix <- function(x = matrix()) {
          getsolve = getsolve)
 }
 # end of function "makeCacheMatrix"
-#===========================================================
-# "cacheSolve" function below will compute the inverse of 
-##the special matrix returned by "makeCacheMatrix".
-### However if the inverse matrix has already mean claiculated
-####and the matrix has not changed, it will retrive the 
-#####inverse from the cache.
-#===========================================================
-# begining of "cacheSolve" function
+
+#======================================
+#         "cacheSolve" function
+#======================================
+# This funciton returns inverse matrix cached after checking that matrix 'm' is not null and original matrix is not changed.
+
+
 cacheSolve <- function(x, ...) {
     m <- x$getsolve()  # getting the value of 'm'  
     if(!is.null(m) & identical(x,m)){ # checking that m is not null and matrix is not changed
